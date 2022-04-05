@@ -6,7 +6,6 @@ class Maze
 {
 	public:
 		Maze(); //defaultconstructor, 11x11.
-		~Maze();
 		int calculatenodefield(int mazedimension);
 		void node_push_back(int nodewidth, int nodelenght);
 		void maze_generator();

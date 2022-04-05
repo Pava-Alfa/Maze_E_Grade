@@ -18,9 +18,6 @@ Maze::Maze() {
 	node_push_back(nodewith, nodelenght);
 }
 
-Maze::~Maze() {
-	
-}
 
 void Maze::node_push_back(int nodewidth, int nodelenght) { // @params: the width of the nodefield, the lenght of the nodefield
 	for (int indexes = 0; indexes < nodelenght; indexes++) { // for all nodes in the field: crate, index and finaly set the possible path for each node
@@ -84,8 +81,6 @@ void Maze::maze_generator() {
 	std::stack<node>temp;
 	int tempxaxis = 0;
 	int tempyaxis = 2;
-	//int tempxaxisprev = NULL;
-	//int tempyaxisprev = NULL;
 	nodes[tempyaxis][tempxaxis].visited = true; // set startnode
 	temp.push(nodes[tempyaxis][tempxaxis]);
 	while (temp.size() != 0) {
@@ -104,13 +99,10 @@ void Maze::maze_generator() {
 				int i = rand() % length2 + 1;
 				randomNumber = temp2[i];
 			}
-			if (randomNumber == 1) {
-				//nodes[tempyaxis][tempxaxis].path.up = false; 
+			if (randomNumber == 1) { 
 				temp.top().path.up = false;
-				//tempyaxisprev = tempyaxis;
 				tempyaxis--;
 				if (nodes[tempyaxis][tempxaxis].visited == false) {
-					//nodes[tempyaxisprev][tempxaxis].choosedPath.up = true;
 					temp.top().choosedPath.up = true;
 					nodes[tempyaxis][tempxaxis].visited = true;
 					temp.push(nodes[tempyaxis][tempxaxis]);
@@ -120,12 +112,9 @@ void Maze::maze_generator() {
 				}
 			}
 			if (randomNumber == 2) {
-				//nodes[tempyaxis][tempxaxis].path.down = false;
 				temp.top().path.down = false;
-				//tempyaxisprev = tempyaxis;
 				tempyaxis++;
 				if (nodes[tempyaxis][tempxaxis].visited == false) {
-					//nodes[tempyaxisprev][tempxaxis].choosedPath.down = true;
 					temp.top().choosedPath.down = true;
 					nodes[tempyaxis][tempxaxis].visited = true;
 					temp.push(nodes[tempyaxis][tempxaxis]);
@@ -135,12 +124,9 @@ void Maze::maze_generator() {
 				}
 			}
 			if (randomNumber == 3) {
-				//nodes[tempyaxis][tempxaxis].path.left = false;
 				temp.top().path.left = false;
-				//tempxaxisprev = tempxaxis;
 				tempxaxis--;
 				if (nodes[tempyaxis][tempxaxis].visited == false) {
-					//nodes[tempyaxis][tempxaxisprev].choosedPath.left = true;
 					temp.top().choosedPath.left = true;
 					nodes[tempyaxis][tempxaxis].visited = true;
 					temp.push(nodes[tempyaxis][tempxaxis]);
@@ -150,12 +136,9 @@ void Maze::maze_generator() {
 				}
 			}
 			if (randomNumber == 4) {
-				//nodes[tempyaxis][tempxaxis].path.right = false;
 				temp.top().path.right = false;
-				//tempxaxisprev = tempxaxis;
 				tempxaxis++;
 				if (nodes[tempyaxis][tempxaxis].visited == false) {
-					//nodes[tempyaxis][tempxaxisprev].choosedPath.right = true;
 					temp.top().choosedPath.right = true;
 					nodes[tempyaxis][tempxaxis].visited = true;
 					temp.push(nodes[tempyaxis][tempxaxis]);
