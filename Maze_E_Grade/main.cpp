@@ -1,3 +1,21 @@
+/*
+Description: A automatic maze-generator console-application that trough a simple CLI-type user-interface creates and presents mazes with dimension 11x11 on demand.
+
+Attempted grade: E.
+
+Created by: Jesper Eriksson(jeer1902) @ Mid Sweden Uneversity.
+
+Course: DT026G(Mid Sweden Uneversity).
+
+Last Modified: 2022-04-05.
+
+Used references in project: 
+Cplusplus.com: https://www.cplusplus.com/reference/cstdlib/rand/
+
+Additional notes: This program was created on and primarly is recomanded to be executed om Microsoft Visual Studio.
+
+*/
+
 #include "Maze.h"
 #include "user_interface.h"
 #include <iostream>
@@ -20,7 +38,7 @@ int main() {
 			print_user_input();
 			std::cin >> UserInput;
 			std::cout << "\t" << std::endl;
-			if (UserInput == "s") { break; }
+			if (UserInput == "s") { break; } //break skipps ONE while loop
 		}
 		if (UserInput == "1") {
 			print_op_one();
@@ -36,7 +54,7 @@ int main() {
 					break;
 				}
 				if (SecurityToken == "Y") {
-					Maze A;
+					Maze A; // static allocated maze => auto-destructs when exit this if statement => same construct-statement can be used again
 					A.maze_generator();
 					A.maze_map_generator();
 					A.maze_map_printer();

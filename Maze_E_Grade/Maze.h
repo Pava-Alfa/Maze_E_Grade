@@ -1,3 +1,21 @@
+/*
+Description: A automatic maze-generator console-application that trough a simple CLI-type user-interface creates and presents mazes with dimension 11x11 on demand.
+
+Attempted grade: E.
+
+Created by: Jesper Eriksson(jeer1902) @ Mid Sweden Uneversity.
+
+Course: DT026G(Mid Sweden Uneversity).
+
+Last Modified: 2022-04-05.
+
+Used references in project:
+Cplusplus.com, rand-function: https://www.cplusplus.com/reference/cstdlib/rand/
+
+Additional notes: This program was created on and primarly is recomanded to be executed om Microsoft Visual Studio.
+
+*/
+
 #ifndef MAZE_H //header guard
 #define MAZE_H
 #include <vector>
@@ -47,7 +65,7 @@ class Maze
 		int nodelenght;
 
 		std::vector<std::vector<node>>nodes;//node-container
-		std::vector<std::vector<char>>mazefield;
+		std::vector<std::vector<char>>mazefield;//maze-map-char-container
 };
 
 #endif
